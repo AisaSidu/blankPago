@@ -1,0 +1,7 @@
+<div class="container">
+  <div *ngFor="let item of menuItems" class="service-box">
+    <div class="service-icon" [innerHTML]="item.icon"></div>
+    <div class="service-title">{{ item.name }}</div>
+    <button class="service-button">Ver más</button>
+  </div>
+</div>

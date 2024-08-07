@@ -1,0 +1,23 @@
+.header-container {
+  background-color: #333;
+  color: #ffffff;
+  padding: 15px 0;
+  text-align: center;
+}
+
+.header-title {
+  font-size: 36px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.header-subtitle {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.header-subtitle a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #ffffff;
+}

@@ -1,0 +1,40 @@
+<div class="payment-container">
+    <h2>Realizar Pago</h2>
+    <form [formGroup]="paymentForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label for="serviceCategory">Seleccionar Categoría de Servicio</label>
+            <select id="serviceCategory" formControlName="serviceCategory" (change)="onCategoryChange($event)">
+                <option *ngFor="let service of services" [value]="service">
+                    {{ service.name }}
+                </option>
+            </select>
+        </div>
+        <div *ngIf="selectedServiceTypes && selectedServiceTypes.length > 0">
+            <label for="serviceType">Seleccionar Tipo de Servicio</label>
+            <select id="serviceType" formControlName="serviceType">
+                <option *ngFor="let type of selectedServiceTypes" [value]="type.nombre">
+                    {{ type.nombre }} - {{ type.precio | currency }}
+                </option>
+            </select>
+        </div>
+        <div>
+            <label for="cardNumber">Número de Tarjeta</label>
+            <input id="cardNumber" formControlName="cardNumber" type="text" />
+        </div>
+        <div>
+            <label for="cardName">Nombre en la Tarjeta</label>
+            <input id="cardName" formControlName="cardName" type="text" />
+        </div>
+        <div>
+            <label for="expiryDate">Fecha de Expiración</label>
+            <input id="expiryDate" formControlName="expiryDate" type="text" />
+        </div>
+        <div>
+            <label for="cvv">CVV</label>
+            <input id="cvv" formControlName="cvv" type="text" />
+        </div>
+        console.log("¡Hola, mundo!");
+
+        <button type="submit">Pagar</button>
+    </form>
+</div>
